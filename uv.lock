@@ -1,0 +1,23 @@
+version = 1
+revision = 2
+requires-python = ">=3.13"
+
+[[package]]
+name = "cvss"
+version = "3.4"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/4d/cf/63414dab3f513a18a3d1183ac3131d0f731bdaeffc125edcd3c08c2f2104/cvss-3.4.tar.gz", hash = "sha256:632353244ba3c58b53355466677edc968b9d7143c317b66271f9fd7939951ee8", size = 29484, upload-time = "2025-02-11T17:28:22.779Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/ee/05/59d74436979e5bdc46b86264ce130271d9469779c43cbd38cf4b8896f27c/cvss-3.4-py2.py3-none-any.whl", hash = "sha256:d9950613758e60820f7fac37ca5f35158712f8f2ea4f6629858a60c4984fe4ef", size = 30748, upload-time = "2025-02-11T17:28:21.299Z" },
+]
+
+[[package]]
+name = "cvss-calculator"
+version = "0.1.0"
+source = { virtual = "." }
+dependencies = [
+    { name = "cvss" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "cvss", specifier = ">=3.4" }]
