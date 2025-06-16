@@ -1,5 +1,10 @@
-from cvss import CVSS3
+"""
+Analizador de vectores CVSS 3.1
+Este módulo proporciona una función para analizar vectores CVSS 3.1,
+calcular sus scores base, temporal y ambiental, y generar una URL para 
+la calculadora CVSS con los parámetros precargados."""
 from urllib.parse import quote
+from cvss import CVSS3
 
 def analizar_cvss(vector: str) -> dict:
     """
@@ -12,7 +17,7 @@ def analizar_cvss(vector: str) -> dict:
     try:
         cvss = CVSS3(vector)
     except Exception as e:
-        raise ValueError(f"Error al analizar el vector: {e}")
+        raise ValueError(f"Error al analizar el vector: {e}") from e
 
     base_score = cvss.base_score
     temporal_score = cvss.temporal_score
